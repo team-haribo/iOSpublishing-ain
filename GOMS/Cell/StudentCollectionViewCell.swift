@@ -1,29 +1,17 @@
 //
-//  StudentView.swift
+//  StudentCollectionViewCell.swift
 //  GOMS
 //
-//  Created by 신아인 on 2023/05/30.
+//  Created by 신아인 on 2023/06/11.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-class StudentView: UIView {
+class StudentCollectionViewCell: UICollectionViewCell {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addView()
-        setLayout()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        addView()
-        setLayout()
-    }
-    
-    private let student = CustomStackView()
+    let student = CustomStackView()
     
     let userImage = UIImageView().then {
         $0.image = UIImage(systemName: "person.crop.circle.fill")
@@ -42,15 +30,29 @@ class StudentView: UIView {
         $0.font = .systemFont(ofSize: 12)
     }
     
-    func addView(){
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.frame = bounds
+        addView()
+        setLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        contentView.frame = bounds
+        addView()
+        setLayout()
+    }
+    
+    private func addView() {
         addSubview(student)
         [userImage,nameLabel,numberLabel].forEach{student.addSubview($0)}
     }
     
     private func setLayout() {
         student.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(130)
+            $0.width.equalTo(95)
+            $0.height.equalTo(125)
             $0.centerX.centerY.equalToSuperview()
         }
         userImage.snp.makeConstraints {

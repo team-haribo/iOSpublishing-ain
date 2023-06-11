@@ -19,8 +19,8 @@
 		07B97D072A24E25700F65374 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 07B97D062A24E25700F65374 /* Then */; };
 		07B97D0A2A24E27800F65374 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D092A24E27800F65374 /* BaseViewController.swift */; };
 		07B97D0C2A256A5800F65374 /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D0B2A256A5800F65374 /* CustomStackView.swift */; };
-		07B97D162A25EEE800F65374 /* StudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D152A25EEE800F65374 /* StudentView.swift */; };
 		07B97D1B2A26083F00F65374 /* ButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D1A2A26083F00F65374 /* ButtonStackView.swift */; };
+		07B97D1E2A357FEC00F65374 /* StudentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D1D2A357FEC00F65374 /* StudentCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +36,8 @@
 		07B97D002A24E1FB00F65374 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		07B97D092A24E27800F65374 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		07B97D0B2A256A5800F65374 /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
-		07B97D152A25EEE800F65374 /* StudentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentView.swift; sourceTree = "<group>"; };
 		07B97D1A2A26083F00F65374 /* ButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStackView.swift; sourceTree = "<group>"; };
+		07B97D1D2A357FEC00F65374 /* StudentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +72,7 @@
 		07B97CDF2A24DF7000F65374 /* GOMS */ = {
 			isa = PBXGroup;
 			children = (
+				07B97D1C2A357FD400F65374 /* Cell */,
 				07B97D082A24E26000F65374 /* Base */,
 				07B97CF82A24E07800F65374 /* View */,
 				07B97CF72A24E07100F65374 /* Custom */,
@@ -96,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				07B97D0B2A256A5800F65374 /* CustomStackView.swift */,
-				07B97D152A25EEE800F65374 /* StudentView.swift */,
 				07B97D1A2A26083F00F65374 /* ButtonStackView.swift */,
 			);
 			path = Custom;
@@ -143,6 +143,14 @@
 				07B97D092A24E27800F65374 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		07B97D1C2A357FD400F65374 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				07B97D1D2A357FEC00F65374 /* StudentCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +239,7 @@
 				07B97D1B2A26083F00F65374 /* ButtonStackView.swift in Sources */,
 				07B97D012A24E1FB00F65374 /* StatusViewController.swift in Sources */,
 				07B97D0A2A24E27800F65374 /* BaseViewController.swift in Sources */,
-				07B97D162A25EEE800F65374 /* StudentView.swift in Sources */,
+				07B97D1E2A357FEC00F65374 /* StudentCollectionViewCell.swift in Sources */,
 				07B97CFB2A24E15200F65374 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

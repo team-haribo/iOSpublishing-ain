@@ -80,17 +80,14 @@ class HomeViewController: BaseViewController {
         $0.font = .boldSystemFont(ofSize: 22)
     }
     
-    private let student1 = StudentView()
-    
-    private let student2 = StudentView().then {
-        $0.nameLabel.text = "서주미"
-        $0.numberLabel.text = "2209"
-    }
-    
-    private let student3 = StudentView().then {
-        $0.nameLabel.text = "김주은"
-        $0.numberLabel.text = "2102"
-    }
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        return collectionView
+    }()
     
     private let myProfileStack = ButtonStackView()
     
@@ -114,8 +111,12 @@ class HomeViewController: BaseViewController {
     override func addView() {
         view.backgroundColor = UIColor(named: "backgroundColor")
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: "StudentCell")
+        
         [gomsLabel,profileButton,mainLabel,mainImage,outingButton,
-         statusStack,lateLabel,myProfileStack,student2,student1,student3].forEach{view.addSubview($0)}
+         statusStack,lateLabel,collectionView,myProfileStack].forEach{view.addSubview($0)}
         
         [subTitleLabel,titleLabel].forEach{statusStack.addSubview($0)}
         
@@ -165,23 +166,11 @@ class HomeViewController: BaseViewController {
             $0.top.equalTo(statusStack.snp.bottom).offset(30)
             $0.leading.equalToSuperview().offset(30)
         }
-        student2.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(130)
+        collectionView.snp.makeConstraints {
             $0.top.equalTo(lateLabel.snp.bottom).offset(20)
-            $0.centerX.equalToSuperview()
-        }
-        student1.snp.makeConstraints {
-            $0.width.equalTo(100)
+            $0.leading.equalToSuperview().offset(30)
+            $0.trailing.equalToSuperview().offset(-30)
             $0.height.equalTo(130)
-            $0.top.equalTo(lateLabel.snp.bottom).offset(20)
-            $0.trailing.equalTo(student2.snp.leading).offset(-13)
-        }
-        student3.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(130)
-            $0.top.equalTo(lateLabel.snp.bottom).offset(20)
-            $0.leading.equalTo(student2.snp.trailing).offset(13)
         }
         myProfileStack.snp.makeConstraints {
             $0.width.equalTo(330)
@@ -203,5 +192,44 @@ class HomeViewController: BaseViewController {
             $0.top.equalTo(userNameLabel.snp.bottom).offset(4)
             $0.leading.equalTo(userImage.snp.trailing).offset(10)
         }
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StudentCell", for: indexPath) as! StudentCollectionViewCell
+        
+        let nameLabel: String
+        let numberLabel: String
+        
+        if indexPath.item == 0 {
+            nameLabel = "신아인"
+            numberLabel = "2211"
+        }
+        else if indexPath.item == 1 {
+            nameLabel = "서주미"
+            numberLabel = "2209"
+        }
+        else {
+            nameLabel = "김주은"
+            numberLabel = "2102"
+        }
+        
+        cell.nameLabel.text = nameLabel
+        cell.numberLabel.text = numberLabel
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 130)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 13
     }
 }
