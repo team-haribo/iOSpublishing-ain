@@ -109,8 +109,6 @@ class HomeViewController: BaseViewController {
     }
     
     override func addView() {
-        view.backgroundColor = UIColor(named: "backgroundColor")
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: "StudentCell")

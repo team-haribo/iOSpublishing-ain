@@ -21,6 +21,9 @@
 		07B97D0C2A256A5800F65374 /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D0B2A256A5800F65374 /* CustomStackView.swift */; };
 		07B97D1B2A26083F00F65374 /* ButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D1A2A26083F00F65374 /* ButtonStackView.swift */; };
 		07B97D1E2A357FEC00F65374 /* StudentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D1D2A357FEC00F65374 /* StudentCollectionViewCell.swift */; };
+		07B97D212A370E9F00F65374 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D202A370E9F00F65374 /* LoginViewController.swift */; };
+		07B97D512A3D9B4300F65374 /* GAuthSignin in Frameworks */ = {isa = PBXBuildFile; productRef = 07B97D502A3D9B4300F65374 /* GAuthSignin */; };
+		07B97D572A3DBD9200F65374 /* GAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D562A3DBD9200F65374 /* GAuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,8 @@
 		07B97D0B2A256A5800F65374 /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
 		07B97D1A2A26083F00F65374 /* ButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStackView.swift; sourceTree = "<group>"; };
 		07B97D1D2A357FEC00F65374 /* StudentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCollectionViewCell.swift; sourceTree = "<group>"; };
+		07B97D202A370E9F00F65374 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		07B97D562A3DBD9200F65374 /* GAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			files = (
 				07B97D042A24E23500F65374 /* SnapKit in Frameworks */,
 				07B97D072A24E25700F65374 /* Then in Frameworks */,
+				07B97D512A3D9B4300F65374 /* GAuthSignin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +80,7 @@
 			children = (
 				07B97D1C2A357FD400F65374 /* Cell */,
 				07B97D082A24E26000F65374 /* Base */,
-				07B97CF82A24E07800F65374 /* View */,
+				07B97CF82A24E07800F65374 /* Controller */,
 				07B97CF72A24E07100F65374 /* Custom */,
 				07B97CF62A24E06A00F65374 /* App */,
 				07B97CE92A24DF7100F65374 /* Assets.xcassets */,
@@ -102,15 +108,16 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
-		07B97CF82A24E07800F65374 /* View */ = {
+		07B97CF82A24E07800F65374 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				07B97CF42A24E03300F65374 /* TabBarController.swift */,
+				07B97D1F2A370E7B00F65374 /* LoginVC */,
 				07B97CF92A24E14300F65374 /* HomeVC */,
 				07B97CFC2A24E18300F65374 /* OutingVC */,
 				07B97CFD2A24E1C400F65374 /* StatusVC */,
 			);
-			path = View;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		07B97CF92A24E14300F65374 /* HomeVC */ = {
@@ -153,6 +160,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		07B97D1F2A370E7B00F65374 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				07B97D202A370E9F00F65374 /* LoginViewController.swift */,
+				07B97D562A3DBD9200F65374 /* GAuthViewModel.swift */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,6 +188,7 @@
 			packageProductDependencies = (
 				07B97D032A24E23500F65374 /* SnapKit */,
 				07B97D062A24E25700F65374 /* Then */,
+				07B97D502A3D9B4300F65374 /* GAuthSignin */,
 			);
 			productName = GOMS;
 			productReference = 07B97CDD2A24DF7000F65374 /* GOMS.app */;
@@ -204,6 +221,7 @@
 			packageReferences = (
 				07B97D022A24E23500F65374 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				07B97D052A24E25700F65374 /* XCRemoteSwiftPackageReference "Then" */,
+				07B97D4F2A3D9B4200F65374 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */,
 			);
 			productRefGroup = 07B97CDE2A24DF7000F65374 /* Products */;
 			projectDirPath = "";
@@ -235,12 +253,14 @@
 				07B97CFF2A24E1F000F65374 /* OutingViewController.swift in Sources */,
 				07B97CE12A24DF7000F65374 /* AppDelegate.swift in Sources */,
 				07B97CE32A24DF7000F65374 /* SceneDelegate.swift in Sources */,
+				07B97D572A3DBD9200F65374 /* GAuthViewModel.swift in Sources */,
 				07B97D0C2A256A5800F65374 /* CustomStackView.swift in Sources */,
 				07B97D1B2A26083F00F65374 /* ButtonStackView.swift in Sources */,
 				07B97D012A24E1FB00F65374 /* StatusViewController.swift in Sources */,
 				07B97D0A2A24E27800F65374 /* BaseViewController.swift in Sources */,
 				07B97D1E2A357FEC00F65374 /* StudentCollectionViewCell.swift in Sources */,
 				07B97CFB2A24E15200F65374 /* HomeViewController.swift in Sources */,
+				07B97D212A370E9F00F65374 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +486,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		07B97D4F2A3D9B4200F65374 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GSM-MSG/GAuthSignin-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -478,6 +506,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 07B97D052A24E25700F65374 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		07B97D502A3D9B4300F65374 /* GAuthSignin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07B97D4F2A3D9B4200F65374 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */;
+			productName = GAuthSignin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
