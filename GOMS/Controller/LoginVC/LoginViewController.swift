@@ -35,14 +35,17 @@ class LoginViewController: BaseViewController {
         $0.font = .systemFont(ofSize: 17)
     }
     
-    let gauthButton = GAuthButton(auth: .signup, color: .colored, rounded: .default)
-    let clientID = "my_client_id"
-    let redirectURI = "my_redirect_uri"
+    let gauthSignInButton = GAuthButton(auth: .signup, color: .colored, rounded: .default)
     var viewModel: GAuthViewModel?
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        gauthButtonSetUp()
+    }
+    
     override func addView() {
-        [logoImage, mainLabel, subLabel, gauthButton].forEach{view.addSubview($0)}
-        setupViewModel()
+        [logoImage, mainLabel, subLabel, gauthSignInButton].forEach{view.addSubview($0)}
     }
     
     override func setLayout() {
@@ -59,25 +62,20 @@ class LoginViewController: BaseViewController {
             $0.top.equalTo(mainLabel.snp.bottom).offset(15)
             $0.centerX.equalToSuperview()
         }
-        gauthButton.snp.makeConstraints {
+        gauthSignInButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(30)
             $0.bottom.equalToSuperview().inset(80)
             $0.height.equalTo(60)
         }
     }
     
-    func setupViewModel() {
-        viewModel = GAuthViewModel(clientID: clientID, redirectURI: redirectURI)
-    
-        if let completion = viewModel?.handleGAuthCode {
-            gauthButton.prepare(
-                clientID: viewModel?.clientID ?? "",
-                redirectURI: viewModel?.redirectURI ?? "",
-                presenting: self,
-                completion: { code in
-                    completion(code)
-                }
-            )
+    private func gauthButtonSetUp() {
+        gauthSignInButton.prepare(
+            clientID: Bundle.main.object(forInfoDictionaryKey: "CLIENT_ID") as? String ?? "",
+            redirectURI: Bundle.main.object(forInfoDictionaryKey: "REDIRECT_URI") as? String ?? "",
+            presenting: self
+        ) { code in
+            self.viewModel!.signInCompleted(code: code)
         }
     }
 }

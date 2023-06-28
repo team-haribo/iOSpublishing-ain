@@ -24,6 +24,13 @@
 		07B97D212A370E9F00F65374 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D202A370E9F00F65374 /* LoginViewController.swift */; };
 		07B97D512A3D9B4300F65374 /* GAuthSignin in Frameworks */ = {isa = PBXBuildFile; productRef = 07B97D502A3D9B4300F65374 /* GAuthSignin */; };
 		07B97D572A3DBD9200F65374 /* GAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D562A3DBD9200F65374 /* GAuthViewModel.swift */; };
+		07B97D5F2A4311B500F65374 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D5E2A4311B500F65374 /* APIConstants.swift */; };
+		07B97D6A2A44615C00F65374 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D692A44615C00F65374 /* SignInModel.swift */; };
+		07B97D6C2A44617A00F65374 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D6B2A44617A00F65374 /* SignInRequest.swift */; };
+		07B97D6E2A44618E00F65374 /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D6D2A44618E00F65374 /* SignInService.swift */; };
+		07B97D712A4462C400F65374 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 07B97D702A4462C400F65374 /* Moya */; };
+		07B97D732A44902200F65374 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D722A44902200F65374 /* RefreshTokenModel.swift */; };
+		07B97D752A45AA4A00F65374 /* RefreshTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B97D742A45AA4A00F65374 /* RefreshTokenRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +50,12 @@
 		07B97D1D2A357FEC00F65374 /* StudentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCollectionViewCell.swift; sourceTree = "<group>"; };
 		07B97D202A370E9F00F65374 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		07B97D562A3DBD9200F65374 /* GAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAuthViewModel.swift; sourceTree = "<group>"; };
+		07B97D5E2A4311B500F65374 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		07B97D692A44615C00F65374 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		07B97D6B2A44617A00F65374 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		07B97D6D2A44618E00F65374 /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
+		07B97D722A44902200F65374 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
+		07B97D742A45AA4A00F65374 /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +65,7 @@
 			files = (
 				07B97D042A24E23500F65374 /* SnapKit in Frameworks */,
 				07B97D072A24E25700F65374 /* Then in Frameworks */,
+				07B97D712A4462C400F65374 /* Moya in Frameworks */,
 				07B97D512A3D9B4300F65374 /* GAuthSignin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +92,7 @@
 		07B97CDF2A24DF7000F65374 /* GOMS */ = {
 			isa = PBXGroup;
 			children = (
+				07B97D5C2A4310E100F65374 /* Data */,
 				07B97D1C2A357FD400F65374 /* Cell */,
 				07B97D082A24E26000F65374 /* Base */,
 				07B97CF82A24E07800F65374 /* Controller */,
@@ -169,6 +184,43 @@
 			path = LoginVC;
 			sourceTree = "<group>";
 		};
+		07B97D5C2A4310E100F65374 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				07B97D5E2A4311B500F65374 /* APIConstants.swift */,
+				07B97D682A44613800F65374 /* Model */,
+				07B97D652A44608900F65374 /* Request */,
+				07B97D602A43F59900F65374 /* Service */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		07B97D602A43F59900F65374 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				07B97D6D2A44618E00F65374 /* SignInService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		07B97D652A44608900F65374 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				07B97D6B2A44617A00F65374 /* SignInRequest.swift */,
+				07B97D742A45AA4A00F65374 /* RefreshTokenRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		07B97D682A44613800F65374 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07B97D692A44615C00F65374 /* SignInModel.swift */,
+				07B97D722A44902200F65374 /* RefreshTokenModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,6 +241,7 @@
 				07B97D032A24E23500F65374 /* SnapKit */,
 				07B97D062A24E25700F65374 /* Then */,
 				07B97D502A3D9B4300F65374 /* GAuthSignin */,
+				07B97D702A4462C400F65374 /* Moya */,
 			);
 			productName = GOMS;
 			productReference = 07B97CDD2A24DF7000F65374 /* GOMS.app */;
@@ -222,6 +275,7 @@
 				07B97D022A24E23500F65374 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				07B97D052A24E25700F65374 /* XCRemoteSwiftPackageReference "Then" */,
 				07B97D4F2A3D9B4200F65374 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */,
+				07B97D6F2A4462C400F65374 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 07B97CDE2A24DF7000F65374 /* Products */;
 			projectDirPath = "";
@@ -250,10 +304,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				07B97CF52A24E03300F65374 /* TabBarController.swift in Sources */,
+				07B97D752A45AA4A00F65374 /* RefreshTokenRequest.swift in Sources */,
+				07B97D6C2A44617A00F65374 /* SignInRequest.swift in Sources */,
 				07B97CFF2A24E1F000F65374 /* OutingViewController.swift in Sources */,
+				07B97D5F2A4311B500F65374 /* APIConstants.swift in Sources */,
+				07B97D6A2A44615C00F65374 /* SignInModel.swift in Sources */,
 				07B97CE12A24DF7000F65374 /* AppDelegate.swift in Sources */,
 				07B97CE32A24DF7000F65374 /* SceneDelegate.swift in Sources */,
+				07B97D6E2A44618E00F65374 /* SignInService.swift in Sources */,
 				07B97D572A3DBD9200F65374 /* GAuthViewModel.swift in Sources */,
+				07B97D732A44902200F65374 /* RefreshTokenModel.swift in Sources */,
 				07B97D0C2A256A5800F65374 /* CustomStackView.swift in Sources */,
 				07B97D1B2A26083F00F65374 /* ButtonStackView.swift in Sources */,
 				07B97D012A24E1FB00F65374 /* StatusViewController.swift in Sources */,
@@ -494,6 +554,14 @@
 				minimumVersion = 0.0.3;
 			};
 		};
+		07B97D6F2A4462C400F65374 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -511,6 +579,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 07B97D4F2A3D9B4200F65374 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */;
 			productName = GAuthSignin;
+		};
+		07B97D702A4462C400F65374 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07B97D6F2A4462C400F65374 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
